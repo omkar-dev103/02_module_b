@@ -8,7 +8,7 @@ Installing the Required Modules
 ```npm install mongoose cors express```
 
 Connecting to Mongodb Compass
-const uri = 'mongodb://localhost:27017/';
+const uri = ```'mongodb://localhost:27017/';```
 
 Connecting to Mongodb Atlas
 const uri = 'mongodb+srv://<db_username>:<db_password>@cluster0.c34fdbw.mongodb.net/appName=Cluster0';
@@ -23,18 +23,19 @@ Authentication API's
 
 Authentication
 1. Register USer
-##Register User
+
+## Register User
 app.post('/auth/register', async (req, res) => {
   // Validate input, hash password, insert user doc into 'users' collection
 });
 
-2. Login User
-##Login User
+3. Login User
+## Login User
 app.post('/api/auth/login', async (req, res) => {
   // Validate credentials, issue JWT token
 });
-3. View Profile
-4. Logout
+4. View Profile
+5. Logout
 
 User Management
 5. List Users
@@ -48,7 +49,7 @@ Service Categories
 Service Requests
 10. Create Request
 11. List Own Requests
-##List Request
+## List Request
 app.get('/requests', async (req, res) => {
   const requests = await db.collection('requests').find({ created_by: req.user.id }).toArray();
   res.json({ success: true, data: requests });
@@ -62,7 +63,7 @@ app.get('/requests', async (req, res) => {
 
 Comments
 16. Add Comment
-##Add Comments 
+## Add Comments 
 app.post('/requests/:id/comments', async (req, res) => {
   // Insert new comment linked to request
 });
