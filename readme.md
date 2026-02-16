@@ -30,6 +30,8 @@ app.post('/auth/register', async (req, res) => {
 });
 
 3. Login User
+
+   
 ## Login User
 app.post('/api/auth/login', async (req, res) => {
   // Validate credentials, issue JWT token
@@ -49,6 +51,8 @@ Service Categories
 Service Requests
 10. Create Request
 11. List Own Requests
+
+
 ## List Request
 app.get('/requests', async (req, res) => {
   const requests = await db.collection('requests').find({ created_by: req.user.id }).toArray();
@@ -63,6 +67,8 @@ app.get('/requests', async (req, res) => {
 
 Comments
 16. Add Comment
+
+
 ## Add Comments 
 app.post('/requests/:id/comments', async (req, res) => {
   // Insert new comment linked to request
